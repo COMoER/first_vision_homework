@@ -1,3 +1,4 @@
 # vision_try
-- 我刚进视觉部的三个任务
-## 第一个任务是进行相机标注
+- camera_calibration是相机标注
+- transposion是放射变换
+- bound_detection是边缘检测
