@@ -115,7 +115,7 @@ int According_To_BoundryDetection()
     waitKey(0);
     vector<Point2f> originpoints;
 
-    //Three find six points.(I don't know how to select them auto.
+    //There find six points.(I don't know how to select them auto.)
     originpoints.push_back(point[2]);//left_up
     originpoints.push_back(point[1]);//right_up
     originpoints.push_back(point[3]);//left_bottom
