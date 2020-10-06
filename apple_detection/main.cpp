@@ -24,11 +24,15 @@ int main() {
     //drawContours(apple,contours,-1,Scalar(255,255,255,0));
     for(int i=0;i<contours.size();++i) {
         if(contours[i][0].x<10||contours[i].size()<5)continue;
-        RotatedRect bound = fitEllipse(contours[i]);
+        RotatedRect bound = minAreaRect(contours[i]);
         if(bound.size.height<20)continue;
-        ellipse(apple, bound,Scalar(0, 255, 0, 0), 2);
+        rectangle(apple,Point2f(bound.center.x-bound.size.width/2,bound.center.y-bound.size.height/2),
+                  Point2f(bound.center.x+bound.size.width/2,bound.center.y+bound.size.height/2),Scalar(0,255,0),2
+        );
+
     }
     imshow("result",apple);
+    imwrite("result.jpg",apple);
     waitKey(0);
     destroyAllWindows();
     return 0;
